@@ -26,10 +26,8 @@ class Customer:
         return list(set(order.coffee for order in self.orders_list))
     
     def create_order(self, coffee, price):
-        # Import locally to avoid circular import
         from order import Order
         
-        # Use string comparison for type checking to avoid import
         if coffee.__class__.__name__ != 'Coffee':
             raise Exception("Coffee must be a Coffee instance")
         if not isinstance(price, (int, float)) or not 1.0 <= price <= 10.0:
@@ -41,7 +39,6 @@ class Customer:
     
     @classmethod
     def most_aficionado(cls, coffee):
-        # Use string comparison for type checking
         if coffee.__class__.__name__ != 'Coffee':
             raise Exception("Must provide a Coffee instance")
         

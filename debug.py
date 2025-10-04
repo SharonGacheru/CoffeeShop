@@ -1,4 +1,3 @@
-# Import all classes at the top
 from customer import Customer
 from coffee import Coffee
 from order import Order
@@ -6,20 +5,17 @@ from order import Order
 def debug_demo():
     print("=== COFFEE SHOP DEBUG DEMO ===")
     
-    # Create customers
     print("\n1. Creating customers...")
     customer1 = Customer("Alice")
     customer2 = Customer("Bob")
     print(f"Created: {customer1.name}, {customer2.name}")
     
-    # Create coffees
     print("\n2. Creating coffees...")
     espresso = Coffee("Espresso")
     latte = Coffee("Latte")
     cappuccino = Coffee("Cappuccino")
     print(f"Created: {espresso.name}, {latte.name}, {cappuccino.name}")
     
-    # Create orders
     print("\n3. Creating orders...")
     order1 = Order(customer1, espresso, 5.0)
     order2 = Order(customer1, latte, 6.5)
@@ -27,7 +23,6 @@ def debug_demo():
     order4 = Order(customer2, cappuccino, 7.0)
     print("Orders created successfully!")
     
-    # Test relationships
     print("\n4. Testing relationships...")
     print(f"{customer1.name}'s orders: {len(customer1.orders())}")
     print(f"{customer1.name}'s coffees: {[coffee.name for coffee in customer1.coffees()]}")
@@ -35,12 +30,11 @@ def debug_demo():
     print(f"Espresso number of orders: {espresso.num_orders()}")
     print(f"Espresso average price: ${espresso.average_price():.2f}")
     
-    # Test bonus method
     print("\n5. Testing bonus method...")
     top_espresso_customer = Customer.most_aficionado(espresso)
     print(f"Top espresso customer: {top_espresso_customer.name if top_espresso_customer else 'None'}")
     
-    # Test error handling
+    # error handling
     print("\n6. Testing error handling...")
     try:
         invalid_customer = Customer("ThisNameIsWayTooLongForValidation")

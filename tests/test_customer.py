@@ -3,7 +3,6 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# Import all classes in the test file
 from customer import Customer
 from coffee import Coffee
 from order import Order

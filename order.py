@@ -1,4 +1,3 @@
-# No imports at the top level to avoid circular imports
 class Order:
     all_orders = []
     
@@ -8,9 +7,7 @@ class Order:
         self._customer = customer
         self._coffee = coffee
         
-        # Add this order to customer's orders
         self.customer.orders_list.append(self)
-        # Add this order to coffee's orders
         self.coffee.orders_list.append(self)
         
         Order.all_orders.append(self)

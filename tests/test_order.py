@@ -46,7 +46,6 @@ class TestOrder:
         coffee = Coffee("Irish Coffee")
         order = Order(customer, coffee, 8.0)
         
-        # Test that order appears in customer's orders
         assert order in customer.orders()
-        # Test that order appears in coffee's orders
+
         assert order in coffee.orders()
